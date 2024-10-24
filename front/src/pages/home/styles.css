@@ -5,15 +5,31 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f2f5;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #4caf50;
     font-size: 3rem;
-  }
-  
-  p {
+}
+
+p {
     color: #333;
     font-size: 1.5rem;
-  }
-  
+}
+
+.token {
+    color: #ffffff;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+
+.token:hover {
+    transform: scale(1.5);
+}
+
+.quad {
+    width: 300px;
+    height: 200px;
+    background-color: #4b4848;
+    padding: 10px;
+}
