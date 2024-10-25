@@ -1,35 +1,82 @@
 .home-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo do menu de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.login-icon a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-icon a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Estilo das seções de sensores */
+.sensor-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sensor-section {
+    display: flex;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-h1 {
-    color: #4caf50;
-    font-size: 3rem;
+.sensor-section.left {
+    flex-direction: row;
 }
 
-p {
-    color: #333;
-    font-size: 1.5rem;
+.sensor-section.right {
+    flex-direction: row-reverse;
 }
 
-.token {
-    color: #ffffff;
+.sensor-section img {
+    width: 80px;
+    height: 80px;
+    margin: 0 20px;
+}
+
+.sensor-section p {
     font-size: 1rem;
-    word-wrap: break-word;
-}
-
-.token:hover {
-    transform: scale(1.5);
-}
-
-.quad {
-    width: 300px;
-    height: 200px;
-    background-color: #4b4848;
-    padding: 10px;
+    color: #333;
+    max-width: 60%;
+    text-align: left;
 }
