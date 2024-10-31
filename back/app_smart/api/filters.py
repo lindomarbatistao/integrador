@@ -20,7 +20,7 @@ class SensorFilter(django_filters.FilterSet):
 
 
 class SensorFilterView(APIView):     
-    permission_classes = [permissions.IsAuthenticated]     
+    # permission_classes = [permissions.IsAuthenticated]     
     
     def post(self, request, *args, **kwargs):         
         tipo = request.data.get('tipo', None)

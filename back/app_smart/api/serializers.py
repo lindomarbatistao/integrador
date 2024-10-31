@@ -28,6 +28,8 @@ class FileUploadSerializer(serializers.Serializer):
 
 
 class TemperaturaDataSerializer(serializers.ModelSerializer):
+    sensor = SensorSerializer(read_only=True)  # Inclui todos os dados do Sensor
+    
     class Meta:	
         model = TemperaturaData
         fields = '__all__'

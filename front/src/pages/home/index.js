@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 // Importando as imagens
+import arduino from "../../images/arduino.png";
 import temperaturaImg from "../../images/temperatura.jpg";
 import umidadeImg from "../../images/umidade.png";
 import contadorImg from "../../images/contador.jpg";
@@ -24,6 +25,9 @@ const Home = () => {
         <div className="home-container">
             {/* Menu de Navegação */}
             <nav className="navbar">
+                <div className="arduino">
+                    <img src={arduino} style={{ width: '100px', height: 'auto' }}/>
+                </div>
                 <ul className="nav-links">
                     <li><Link to="/temperatura">Temperatura</Link></li>
                     <li><Link to="/umidade">Umidade</Link></li>
@@ -31,11 +35,11 @@ const Home = () => {
                     <li><Link to="/luminosidade">Luminosidade</Link></li>
                 </ul>
                 <div className="login-icon">
-                    <Link to="/pages/login/index.js">Login</Link>
+                    <Link to="/">Login</Link>
                     <p>{loggedInUser}</p> {/* Exibe o nome do usuário logado */}
                 </div>
             </nav>
-
+        
             <h1>Bem-vindo à Home!</h1>
             <p>Você fez login com sucesso.</p>
 
@@ -44,7 +48,7 @@ const Home = () => {
                 <div className="sensor-section left">
                     <img src={temperaturaImg} alt="Sensor de Temperatura" />
                     <p>
-                    O sensor de temperatura é um dispositivo fundamental em diversos ambientes, pois permite o monitoramento e registro das variações de temperatura em tempo real, garantindo que dados precisos estejam sempre disponíveis. Este tipo de sensor opera captando as mudanças térmicas e transformando-as em informações digitais, que são, então, transmitidas para sistemas de controle. Ele é amplamente utilizado em aplicações industriais, residenciais e comerciais para manter o ambiente em condições ideais, além de proteger equipamentos sensíveis ao calor. Em sistemas de climatização, por exemplo, o sensor de temperatura é essencial para ajustar automaticamente a refrigeração ou o aquecimento, assegurando a eficiência energética e o conforto dos ocupantes. Em ambientes laboratoriais, a precisão do sensor é crucial para a realização de experimentos sensíveis que dependem de condições térmicas específicas. Por meio de análises gráficas, ele possibilita a avaliação de tendências de temperatura ao longo do tempo, sendo um grande aliado na prevenção de problemas e na tomada de decisões informadas sobre manutenção e ajustes técnicos.</p>
+                        O sensor de temperatura é um dispositivo fundamental em diversos ambientes, pois permite o monitoramento e registro das variações de temperatura em tempo real, garantindo que dados precisos estejam sempre disponíveis. Este tipo de sensor opera captando as mudanças térmicas e transformando-as em informações digitais, que são, então, transmitidas para sistemas de controle. Ele é amplamente utilizado em aplicações industriais, residenciais e comerciais para manter o ambiente em condições ideais, além de proteger equipamentos sensíveis ao calor. Em sistemas de climatização, por exemplo, o sensor de temperatura é essencial para ajustar automaticamente a refrigeração ou o aquecimento, assegurando a eficiência energética e o conforto dos ocupantes. Em ambientes laboratoriais, a precisão do sensor é crucial para a realização de experimentos sensíveis que dependem de condições térmicas específicas. Por meio de análises gráficas, ele possibilita a avaliação de tendências de temperatura ao longo do tempo, sendo um grande aliado na prevenção de problemas e na tomada de decisões informadas sobre manutenção e ajustes técnicos.</p>
                 </div>
                 <div className="sensor-section right">
                     <p>O sensor de umidade é essencial para monitorar a quantidade de vapor d’água no ar, o que é especialmente importante em ambientes como estufas, armazéns, indústrias e até residências. Esse dispositivo mede a umidade relativa, oferecendo informações em tempo real que ajudam a manter as condições ideais em um espaço. Em sistemas de climatização, o sensor permite ajustes automáticos para preservar o conforto térmico. Além disso, em ambientes industriais, ele auxilia na proteção de equipamentos sensíveis e evita a deterioração de materiais. O monitoramento contínuo da umidade é vital para manter a integridade dos processos e garantir ambientes saudáveis e seguros.</p>
@@ -57,11 +61,11 @@ const Home = () => {
                 <div className="sensor-section right">
                     <p>O sensor de luminosidade é um dispositivo projetado para medir a intensidade da luz em um ambiente específico. Ele é amplamente utilizado em diversas aplicações, desde residências até indústrias, desempenhando um papel crucial na automação e no controle ambiental. Esses sensores funcionam detectando a luz natural ou artificial e convertendo essa informação em sinais elétricos que podem ser interpretados por sistemas eletrônicos.
 
-Um dos principais benefícios do sensor de luminosidade é sua capacidade de otimizar o uso de energia. Por exemplo, em ambientes comerciais, ele pode regular a intensidade das luzes artificiais com base na luminosidade natural disponível, contribuindo para a redução do consumo de energia e custos operacionais. Em casas inteligentes, esses sensores podem ativar ou desativar luzes automaticamente, melhorando o conforto e a conveniência para os moradores.
+                        Um dos principais benefícios do sensor de luminosidade é sua capacidade de otimizar o uso de energia. Por exemplo, em ambientes comerciais, ele pode regular a intensidade das luzes artificiais com base na luminosidade natural disponível, contribuindo para a redução do consumo de energia e custos operacionais. Em casas inteligentes, esses sensores podem ativar ou desativar luzes automaticamente, melhorando o conforto e a conveniência para os moradores.
 
-Além disso, o sensor de luminosidade é fundamental em sistemas de segurança, onde a detecção de mudanças nos níveis de luz pode indicar a presença de intrusos. Em ambientes agrícolas, eles ajudam a monitorar as condições de cultivo, garantindo que as plantas recebam a quantidade ideal de luz para um crescimento saudável.
+                        Além disso, o sensor de luminosidade é fundamental em sistemas de segurança, onde a detecção de mudanças nos níveis de luz pode indicar a presença de intrusos. Em ambientes agrícolas, eles ajudam a monitorar as condições de cultivo, garantindo que as plantas recebam a quantidade ideal de luz para um crescimento saudável.
 
-Ao coletar e analisar dados sobre a intensidade da luz, os sensores de luminosidade não apenas melhoram a eficiência energética, mas também proporcionam um ambiente mais confortável e seguro para os usuários.</p>
+                        Ao coletar e analisar dados sobre a intensidade da luz, os sensores de luminosidade não apenas melhoram a eficiência energética, mas também proporcionam um ambiente mais confortável e seguro para os usuários.</p>
                     <img src={luminosidadeImg} alt="Sensor de Luminosidade" />
                 </div>
             </div>

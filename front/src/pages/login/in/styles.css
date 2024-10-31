@@ -5,6 +5,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f2f5;
+    font-family: 'Helvetica';
   }
   
   .form {
@@ -16,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 12px;
   }
   
   h2 {
