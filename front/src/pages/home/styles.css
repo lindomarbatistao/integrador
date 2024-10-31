@@ -1,6 +1,7 @@
 .home-container {
     padding: 20px;
     text-align: center;
+    font-family: 'Helvetica';
 }
 
 /* Estilo do menu de navegação */
@@ -56,8 +57,9 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    /* border: 1px solid #ddd; */
+    /* border-radius: 8px; */
+    width: 50%;
 }
 
 .sensor-section.left {
@@ -69,14 +71,16 @@
 }
 
 .sensor-section img {
-    width: 80px;
-    height: 80px;
+    width: 300px;
+    height: 300px;
     margin: 0 20px;
+    /* align-items: center; */
 }
 
 .sensor-section p {
     font-size: 1rem;
     color: #333;
     max-width: 60%;
-    text-align: left;
+    text-align: justify;
+    font-family: 'Helvetica';
 }

@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 from app_smart.api.viewsets import CreateUserAPIViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from app_smart.api.viewsets import CreateUserAPIViewSet
+from app_smart.api.viewsets import CreateUserAPIViewSet, TemperaturaDataViewSet, TemperatureDataList
 from rest_framework.routers import DefaultRouter
 from .views import upload_csv_view, load_temperature_data, upload_csv_view_test
 from app_smart.api.filters import SensorFilterView
@@ -27,7 +27,8 @@ urlpatterns = [
  path('api/upload_csv/', upload_csv_view, name='upload_csv'),
  path('api/test/', upload_csv_view_test, name='upload_csv'),
  path('api/sensor_filter/', SensorFilterView.as_view(), name='sensor_filter'),
- path('api/temperatura/', load_temperature_data, name='temperatura_data')
+ path('api/temp/', load_temperature_data, name='temperatura_data'),
+ path('api/temperatura/', TemperatureDataList.as_view(), name='temperatura'),
 ]
 
 

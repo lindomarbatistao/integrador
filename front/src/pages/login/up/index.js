@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./styles.css"; // O estilo da página de login
+import "./styles.css"; // O estilo da página de cadastro
 
-const Login = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const navigate = useNavigate(); // Hook para redirecionamento
+  const [loggedInUser, setLoggedInUser] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,24 +18,24 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+      const response = await axios.post("http://127.0.0.1:8000/api/create_user/", {
         username: formData.username,
         password: formData.password,
       });
 
-      const { access, refresh } = response.data;
+      if (response.status === 201) {
+        setSuccessMessage("Cadastro realizado com sucesso! Faça login.");
+        setErrorMessage("");
 
-      localStorage.setItem("accessToken", access);
-      localStorage.setItem("refreshToken", refresh);
+        localStorage.setItem("username", formData.username)
 
-      setSuccessMessage("Login realizado com sucesso!");
-      setErrorMessage("");
-
-      // Redirecionar para a página 'home'
-      navigate("/home");
-
+        // Redirecionar para a página de login
+        setTimeout(() => {
+          navigate("/home"); // Modifique conforme a sua rota de login
+        }, 2000);
+      }
     } catch (error) {
-      setErrorMessage("Usuário ou senha inválidos. Tente novamente.");
+      setErrorMessage("Erro ao cadastrar. Tente um usuário diferente.");
       setSuccessMessage("");
     }
   };
@@ -42,7 +43,8 @@ const Login = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Cadastro</h2>
+        {loggedInUser && <p>Bem-vindo, {loggedInUser}!</p>}
         {errorMessage && <p className="error">{errorMessage}</p>}
         {successMessage && <p className="success">{successMessage}</p>}
         <input
@@ -61,10 +63,16 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Entrar</button>
+        <button type="submit">Cadastrar</button>
+        <p>
+          Já tem uma conta?{" "}
+          <a href="/src/pages/login" className="login-link">
+            Faça login
+          </a>
+        </p>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
