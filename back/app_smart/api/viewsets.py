@@ -24,7 +24,6 @@ class SensorViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = SensorFilter	
 
-
 class TemperaturaDataViewSet(viewsets.ModelViewSet):     
     queryset = TemperaturaData.objects.all()
     serializer_class = serializers.TemperaturaDataSerializer     

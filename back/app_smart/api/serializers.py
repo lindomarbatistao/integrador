@@ -20,7 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
 class SensorSerializer(serializers.ModelSerializer):	
     class Meta:		
         model = Sensor		
-        fields = '__all__'  # Isso serializa todos os campos do modelo Sensor
+        fields = '__all__'  
 
 
 class FileUploadSerializer(serializers.Serializer):

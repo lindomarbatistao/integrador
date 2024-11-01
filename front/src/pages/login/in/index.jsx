@@ -20,7 +20,7 @@ const Login = () => {
       const response = await axios.post("http://127.0.0.1:8000/api/token/", {
         username: formData.username,
         password: formData.password,
-      });
+      })
 
       const { access, refresh } = response.data;
 
